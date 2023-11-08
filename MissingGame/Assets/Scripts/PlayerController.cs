@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = true;
 
     private bool jumpPressed;
+
+    private bool canMove = true;
     
     [SerializeField] 
     private GameObject groundCheck;
@@ -35,9 +37,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.02f, groundLayer);
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && canMove)
         {
             jumpPressed = true;
         }
@@ -45,15 +47,23 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        horizontalMovement = horizontalInput * speed * Time.deltaTime;
-        animator.SetFloat("Horizontal", horizontalMovement);
-        animator.SetBool("Jumping", !isGrounded);
-        rb.velocity = new Vector2(horizontalMovement, rb.velocity.y);
-        
-        if (jumpPressed)
+        if (canMove)
         {
-            jumpPressed = false;
-            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+            horizontalMovement = horizontalInput * speed * Time.deltaTime;
+            animator.SetFloat("Horizontal", horizontalMovement);
+            animator.SetBool("Jumping", !isGrounded);
+            rb.velocity = new Vector2(horizontalMovement, rb.velocity.y);
+        
+            if (jumpPressed)
+            {
+                jumpPressed = false;
+                rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+            }
         }
+    }
+
+    public void SetCanMove(bool canThisMove)
+    {
+        canMove = canThisMove;
     }
 }
