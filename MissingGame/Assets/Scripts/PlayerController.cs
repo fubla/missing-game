@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         if (canClimb && Mathf.Abs(verticalInput) > 0f)
         {
             isClimbing = true;
+            animator.SetBool("Climbing", true);
         }
         
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && canMove)
@@ -69,11 +70,9 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (canMove)
-        {
             horizontalMovement = horizontalInput * speed * Time.deltaTime;
             animator.SetFloat("Horizontal", horizontalMovement);
-            animator.SetBool("Jumping", !isGrounded);
+            animator.SetBool("Jumping", !isGrounded && !isClimbing);
             rb.velocity = new Vector2(horizontalMovement, rb.velocity.y);
         
             if (jumpPressed)
@@ -93,7 +92,6 @@ public class PlayerController : MonoBehaviour
             {
                 rb.gravityScale = gravScale;
             }
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -110,11 +108,7 @@ public class PlayerController : MonoBehaviour
         {
             canClimb = false;
             isClimbing = false;
+            animator.SetBool("Climbing", false);
         }
-    }
-
-    public void SetCanMove(bool canThisMove)
-    {
-        canMove = canThisMove;
     }
 }

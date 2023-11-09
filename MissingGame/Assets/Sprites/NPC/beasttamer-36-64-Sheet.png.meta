@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83c132cd3a3808b469d1671d4023714d
+guid: e8a62b8a757ae4bcabfbb4307b78e128
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_fantasy_yessword_48x52_0
+      name: beasttamer-36-64-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 52
+        width: 36
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 768e4f7713d86c1479af20004fc7c428
-      internalID: -1606009371
+      spriteID: 24fdc26ce96a444b6adca66581d0fa36
+      internalID: -968241358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_fantasy_yessword_48x52_1
+      name: beasttamer-36-64-Sheet_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 36
         y: 0
-        width: 48
-        height: 52
+        width: 36
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,113 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 204467b899637a74ea53a154ed3a7ac7
-      internalID: -798507349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_fantasy_yessword_48x52_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad78404fb0f0e044faef30e359d2b144
-      internalID: 1338935287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_fantasy_yessword_48x52_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 982bd2a7ba000e24c8bee6cdf2980a6c
-      internalID: 1560421229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_fantasy_yessword_48x52_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c379d00ab35a28b458205d8e87cf89b9
-      internalID: 2066896654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_fantasy_yessword_48x52_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6710073430407dc42a9cb2c402f8f9c9
-      internalID: 2109433887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_fantasy_yessword_48x52_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fed3269d4a3513648a2d99046c9193fe
-      internalID: 1571543953
+      spriteID: c3b38aa7520d549ed999a9b3adaea8f0
+      internalID: -1003320142
       vertices: []
       indices: 
       edges: []
@@ -280,13 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MC_fantasy_yessword_48x52_0: -1606009371
-      MC_fantasy_yessword_48x52_1: -798507349
-      MC_fantasy_yessword_48x52_2: 1338935287
-      MC_fantasy_yessword_48x52_3: 1560421229
-      MC_fantasy_yessword_48x52_4: 2066896654
-      MC_fantasy_yessword_48x52_5: 2109433887
-      MC_fantasy_yessword_48x52_6: 1571543953
+      beasttamer-36-64-Sheet_0: -968241358
+      beasttamer-36-64-Sheet_1: -1003320142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

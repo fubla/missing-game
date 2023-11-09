@@ -48,6 +48,7 @@ public class DialogueTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isInRange = true;
+            manager.OpenInteractionBubble();
         }
     }
 
@@ -58,6 +59,7 @@ public class DialogueTrigger : MonoBehaviour
             isInRange = false;
             manager.EndDialogue();
             isOpen = false;
+            manager.CloseInteractionBubble();
         }
     }
 }

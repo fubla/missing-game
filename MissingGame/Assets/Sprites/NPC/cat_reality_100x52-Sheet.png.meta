@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b90c6b1178c2ef441a0530b81bab8df1
+guid: af656abfcb4a84d5c8f8de94b52f1939
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wizard_68x64, 56x64_0
+      name: cat_reality_100x52-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 70
-        height: 70
+        width: 100
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ddf3a397338a4dc180ba6a85218e133
-      internalID: 1827875775
+      spriteID: 46aba525033b143e4892d61112b25ea0
+      internalID: -1399403727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_68x64, 56x64_1
+      name: cat_reality_100x52-Sheet_1
       rect:
         serializedVersion: 2
-        x: 70
+        x: 100
         y: 0
-        width: 70
-        height: 70
+        width: 100
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cf7765207b504c9a8f1714a6480cbcd
-      internalID: -1250826228
+      spriteID: 95affb5976256483d9535e141f5c73cb
+      internalID: 1274614346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_reality_100x52-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa623b06cb1d44a6abb711c072505b13
+      internalID: 839826930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_reality_100x52-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5679359c10b2a4dd999489f8a29117da
+      internalID: -1906954545
       vertices: []
       indices: 
       edges: []
@@ -175,8 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wizard_68x64, 56x64_0: 1827875775
-      wizard_68x64, 56x64_1: -1250826228
+      cat_reality_100x52-Sheet_0: -1399403727
+      cat_reality_100x52-Sheet_1: 1274614346
+      cat_reality_100x52-Sheet_2: 839826930
+      cat_reality_100x52-Sheet_3: -1906954545
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

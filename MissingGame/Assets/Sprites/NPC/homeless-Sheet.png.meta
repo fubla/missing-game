@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b90c6b1178c2ef441a0530b81bab8df1
+guid: 7c6382584bb8d4b04925afc5297a4a64
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wizard_68x64, 56x64_0
+      name: homeless-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 70
-        height: 70
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ddf3a397338a4dc180ba6a85218e133
-      internalID: 1827875775
+      spriteID: 74ce4f034ca3b4ecf8485636373e5b16
+      internalID: -1394674465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_68x64, 56x64_1
+      name: homeless-Sheet_1
       rect:
         serializedVersion: 2
-        x: 70
+        x: 100
         y: 0
-        width: 70
-        height: 70
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cf7765207b504c9a8f1714a6480cbcd
-      internalID: -1250826228
+      spriteID: 343e279fe64944aab990179eea631e09
+      internalID: -1305541960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: homeless-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36ac3b57cc5846a89706181e08a9291
+      internalID: 2002987237
       vertices: []
       indices: 
       edges: []
@@ -175,8 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wizard_68x64, 56x64_0: 1827875775
-      wizard_68x64, 56x64_1: -1250826228
+      homeless-Sheet_0: -1394674465
+      homeless-Sheet_1: -1305541960
+      homeless-Sheet_2: 2002987237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
