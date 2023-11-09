@@ -10,16 +10,20 @@ public class DialogueTrigger : MonoBehaviour
 
     private DialogueManager manager;
 
-    private bool isInRange = false;
+    private bool isInRange;
 
-    private bool isOpen = false;
+    private bool isOpen;
 
-    private void Start()
+    private bool isFinished;
+   
+    [SerializeField] private bool openOnEnter;
+
+    void Start()
     {
         manager = FindObjectOfType<DialogueManager>();
     }
 
-    private void Update()
+    void Update()
     {
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
@@ -28,9 +32,10 @@ public class DialogueTrigger : MonoBehaviour
                 if (manager.DisplayNextSentence())
                 {
                     isOpen = false;
+                    isFinished = true;
                 }
             }
-            else
+            else if (!isFinished)
             {
                 TriggerDialogue();
                 isOpen = true;
@@ -45,10 +50,18 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isFinished)
         {
             isInRange = true;
-            manager.OpenInteractionBubble();
+            if (openOnEnter)
+            {
+                TriggerDialogue();
+                isOpen = true;
+            }
+            else
+            {
+                manager.OpenInteractionBubble();    
+            }
         }
     }
 
@@ -61,5 +74,10 @@ public class DialogueTrigger : MonoBehaviour
             isOpen = false;
             manager.CloseInteractionBubble();
         }
+    }
+
+    public int GetDialogueStage()
+    {
+        return manager.GetDialogueStage();
     }
 }

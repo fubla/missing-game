@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Climbable
+  - Wizard
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,12 @@ TagManager:
   - name: Background
     uniqueID: 3739373543
     locked: 0
-  - name: Foreground
+  - name: Static
     uniqueID: 273012219
+    locked: 0
+  - name: Foreground
+    uniqueID: 726589447
+    locked: 0
+  - name: Overlay
+    uniqueID: 4030735871
     locked: 0
