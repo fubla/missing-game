@@ -364,7 +364,7 @@ MonoBehaviour:
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 1
   ShowBankRefreshWindow: 0
-  AutomaticEventLoading: 1
+  AutomaticEventLoading: 0
   BankLoadType: 0
   AutomaticSampleLoading: 0
   EncryptionKey: 
@@ -396,7 +396,7 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131609
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131609
   Platforms:
   - {fileID: 5635089780923236536}
