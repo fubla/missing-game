@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3450058587560414919}
   - component: {fileID: 7066541959111661593}
   - component: {fileID: 1794725017829815305}
-  - component: {fileID: 7507103283494684505}
   - component: {fileID: 6729463025544403399}
   - component: {fileID: 3617597104167121974}
   - component: {fileID: 2121662078833070426}
@@ -50,8 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16969ea377ef54175ad2bddfc1f5bbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 120
-  jumpAmount: 1
+  speed: 150
+  climbSpeed: 150
+  jumpAmount: 10
   groundCheck: {fileID: 9055372605638342203}
   groundLayer:
     serializedVersion: 2
@@ -68,7 +68,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.87935877
+  m_Mass: 0.5749009
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
@@ -83,24 +83,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7507103283494684505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3119762860359665779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16969ea377ef54175ad2bddfc1f5bbde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  jumpAmount: 10
-  groundCheck: {fileID: 9055372605638342203}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!212 &6729463025544403399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -141,13 +123,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 273012219
   m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -1606009371, guid: 83c132cd3a3808b469d1671d4023714d, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 201464858, guid: 4fdf59fcba2df4910a6b06ce5b384cdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.2083334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -206,8 +188,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02, y: -0.02}
-  m_Size: {x: 0.65, y: 0.94}
+  m_Offset: {x: -0.14774872, y: -0.03135796}
+  m_Size: {x: 0.3866834, y: 0.9627158}
   m_Direction: 0
 --- !u!1 &9055372605638342203
 GameObject:

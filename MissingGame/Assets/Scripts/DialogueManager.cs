@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Animator animator;
+    public Animator dialogueAnimator;
+    public Animator interactionBubbleAnimator;
     public Text nameText;
     public Text dialogueText;
     private Queue<String> sentences;
@@ -19,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        animator.SetBool("IsOpen", true);
+        dialogueAnimator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
         sentences.Clear();
 
@@ -56,7 +57,17 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        animator.SetBool("IsOpen", false);
+        dialogueAnimator.SetBool("IsOpen", false);
+    }
+
+    public void OpenInteractionBubble()
+    {
+        interactionBubbleAnimator.SetBool("PopupOpen", true);
+    }
+
+    public void CloseInteractionBubble()
+    {
+        interactionBubbleAnimator.SetBool("PopupOpen", false);
     }
    
 }
