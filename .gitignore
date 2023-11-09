@@ -83,14 +83,14 @@ crashlytics-build.properties
 
 
 # Never ignore DLLs in the FMOD subfolder.
-!/[Aa]ssets/Plugins/FMOD/**/lib/*
+!/MissingGame/[Aa]ssets/Plugins/FMOD/**/lib/*
 
 # Don't ignore images and gizmos used by FMOD in the Unity Editor.
-!/[Aa]ssets/Gizmos/FMOD/*
-!/[Aa]ssets/Editor Default Resources/FMOD/*
+!/MissingGame/[Aa]ssets/Gizmos/FMOD/*
+!/MissingGame/[Aa]ssets/Editor Default Resources/FMOD/*
 
 # Ignore the Cache folder since it is updated locally.
-MissingGame/[Aa]ssets/Plugins/FMOD/Cache/*
+/MissingGame/[Aa]ssets/Plugins/FMOD/Cache/*
 
 # Ignore bank files in the StreamingAssets folder.
 /[Aa]ssets/StreamingAssets/**/*.bank
@@ -101,5 +101,3 @@ MissingGame/[Aa]ssets/Plugins/FMOD/Cache/*
 fmod_editor.log
 
 MissingGame/FMODProj
-
-MissingGame/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
