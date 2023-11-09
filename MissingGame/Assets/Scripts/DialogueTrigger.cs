@@ -9,7 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
 
     private DialogueManager manager;
-    
+
     private bool isInRange = false;
 
     private bool isOpen = false;
@@ -21,21 +21,20 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (isInRange)
+        if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (isOpen)
             {
-                if (isOpen)
+                if (manager.DisplayNextSentence())
                 {
-                    manager.EndDialogue();
                     isOpen = false;
                 }
-                else
-                {
-                    TriggerDialogue();
-                    isOpen = true;
-                }
-            }   
+            }
+            else
+            {
+                TriggerDialogue();
+                isOpen = true;
+            }
         }
     }
 
@@ -43,14 +42,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         manager.StartDialogue(dialogue);
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             isInRange = true;
-        }    
+        }
     }
-    
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -58,7 +58,6 @@ public class DialogueTrigger : MonoBehaviour
             isInRange = false;
             manager.EndDialogue();
             isOpen = false;
-        }    
+        }
     }
 }
-
