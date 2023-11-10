@@ -30,8 +30,6 @@ public class PlayerController : MonoBehaviour
 
     private bool jumpPressed;
 
-    private bool attackPressed;
-
     private bool canClimb;
 
     private bool canAttack;
@@ -72,25 +70,13 @@ public class PlayerController : MonoBehaviour
             jumpPressed = true;
         }
 
+        if (Input.GetMouseButtonDown(0) && canAttack)
+        {
+            animator.SetTrigger("AttackingLeft");
+        }
         if (Input.GetMouseButtonDown(1) && canAttack)
         {
-            attackPressed = true;
-            animator.SetBool("AttackingLeft", true);
-        }
-        else
-        {
-            attackPressed = false;
-            animator.SetBool("AttackingLeft", false);
-        }
-        if (Input.GetMouseButtonDown(2) && canAttack)
-        {
-            attackPressed = true;
-            animator.SetBool("AttackingRight", true);
-        }
-        else
-        {
-            attackPressed = false;
-            animator.SetBool("AttackingRight", false);
+            animator.SetTrigger("AttackingRight");
         }
     }
     
@@ -136,5 +122,21 @@ public class PlayerController : MonoBehaviour
             isClimbing = false;
             animator.SetBool("Climbing", false);
         }
+    }
+
+    public bool CanAttack()
+    {
+        return canAttack;
+    }
+
+    public void AttackRight()
+    {
+        Debug.Log("attacked");
+        animator.SetTrigger("AttackingRight");
+    }
+    
+    public void AttackLeft()
+    {
+        animator.SetTrigger("AttackingLeft");
     }
 }

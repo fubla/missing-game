@@ -17,6 +17,8 @@ public class DialogueTrigger : MonoBehaviour
     private bool isFinished;
 
     private int dialogueStage;
+
+    private bool canContinue = true;
    
     [SerializeField] private bool openOnEnter;
 
@@ -27,7 +29,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void Update()
     {
-        if (isInRange && Input.GetKeyDown(KeyCode.E))
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && canContinue)
         {
             if (isOpen)
             {
@@ -77,11 +79,6 @@ public class DialogueTrigger : MonoBehaviour
             isOpen = false;
             manager.CloseInteractionBubble();
         }
-    }
-
-    public bool DialogueIsOpen()
-    {
-        return isOpen;
     }
 
     public bool IsInRange()

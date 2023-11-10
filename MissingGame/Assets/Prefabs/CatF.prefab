@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 6517462945082852959}
   - component: {fileID: 5414573560977036814}
   - component: {fileID: 2274195270429728924}
+  - component: {fileID: 9016798741446211734}
+  - component: {fileID: 3381480681762882699}
+  - component: {fileID: 5640772987399004146}
   m_Layer: 0
   m_Name: CatF
   m_TagString: Untagged
@@ -71,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 726589447
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1580426712, guid: e86f1caf23ef849d5ae0d745766139bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,3 +109,102 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9016798741446211734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7848404982436302594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97870a0eb650439badea845794487b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - name: You
+      text: 'What a distinguished gentleman!
+
+'
+    - name: Distinguished Gentleman
+      text: "Oh it\u2019s you, kid.\r\nFor a moment I thought I saw the Grandmother
+        Queen.\r\n"
+    - name: You
+      text: Do you know the Queen?
+    - name: Distinguished Gentleman
+      text: "We were friends for years.\r\nBut since you\u2019re not her, I have
+        a riddle for you.\r\n\r\n"
+    - name: Distinguished Gentleman
+      text: "You will not get anything out of me for solving this, I\u2019m just
+        bored."
+    - name: Distinguished Gentleman
+      text: What has one voice but goes on four legs in the morning, two in the afternoon,
+        and three in the evening?
+    - name: You
+      text: A knuckle mcnuckle!
+    - name: Distinguished Gentleman
+      text: "Wrong answer.\r\nI actually have no idea what that riddle means.\r\nAnyways,
+        go away. I\u2019m a light sleeper.\r\n"
+    - name: You
+      text: A knuckle mcnuckle!
+  openOnEnter: 0
+--- !u!61 &3381480681762882699
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7848404982436302594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07917786, y: 0.10353917}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.125, y: 1.625}
+    newSize: {x: 2.0833333, y: 1.0833334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.6952095, y: 1.5153705}
+  m_EdgeRadius: 0
+--- !u!114 &5640772987399004146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7848404982436302594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1605a171405d77e4fa8630bc4635e08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OpenEyesStage: 0
+  CloseEyesStage: 0
