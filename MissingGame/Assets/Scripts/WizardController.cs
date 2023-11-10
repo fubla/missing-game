@@ -14,12 +14,14 @@ public class WizardController: MonoBehaviour
     private Animator animator;
     private DialogueTrigger trigger;
 
+    private bool soundDrawPlayed;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
         trigger = GetComponent<DialogueTrigger>();
+        soundDrawPlayed = false;
     }
     
     // Update is called once per frame
@@ -31,6 +33,9 @@ public class WizardController: MonoBehaviour
             if (stage == HandSwordDialogueStage)
             {
                 animator.SetBool("GivingItem", true);
+                if(!soundDrawPlayed)
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SD/SwordReceive", transform.position);
+                soundDrawPlayed = true;
             }
             else if(stage == TakeSwordDialogueStage)
             {
