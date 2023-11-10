@@ -101,3 +101,5 @@ crashlytics-build.properties
 fmod_editor.log
 
 MissingGame/FMODProj
+
+MissingGame/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
