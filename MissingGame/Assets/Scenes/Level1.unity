@@ -1002,15 +1002,15 @@ RectTransform:
   m_GameObject: {fileID: 292305592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39009, y: 0.39009, z: 0.39009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 987703708}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.7, y: -41.6}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -42, y: 21.92}
+  m_SizeDelta: {x: 71.01, y: 23.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292305594
 MonoBehaviour:
@@ -2319,15 +2319,15 @@ RectTransform:
   m_GameObject: {fileID: 760244997}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4102564, y: 0.6896551, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 987703708}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.456413, y: 32.75863}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 89.6, y: -26.9}
+  m_SizeDelta: {x: 157.3, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &760244999
 MonoBehaviour:
@@ -2747,7 +2747,7 @@ RectTransform:
   m_GameObject: {fileID: 987703707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4375, y: 1.45, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 760244998}
@@ -2757,8 +2757,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.8, y: 23.9}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 260, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987703709
 MonoBehaviour:
@@ -2780,8 +2780,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 666647933, guid: 0fcb99e1c6303c04598d0626fd56a07d, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2789,7 +2789,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3
 --- !u!222 &987703710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3271,15 +3271,15 @@ RectTransform:
   m_GameObject: {fileID: 1372552224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4102564, y: 0.6896551, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 987703708}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.7455, y: -5.5462}
-  m_SizeDelta: {x: 226.2345, y: 85.0839}
+  m_AnchoredPosition: {x: -5.1, y: 5.1}
+  m_SizeDelta: {x: 226.2345, y: 85.08389}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372552226
 MonoBehaviour:
@@ -16852,44 +16852,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 792104217223136598, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 792104217223136598, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 726589447
-      objectReference: {fileID: 0}
     - target: {fileID: 1035930188427781745, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
       propertyPath: m_Name
-      value: wizard_68x64, 56x64_0
+      value: Wizard
       objectReference: {fileID: 0}
-    - target: {fileID: 6857557849564756901, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
-      propertyPath: dialogue.sentences.Array.data[0].name
-      value: Wise Wizard
+    - target: {fileID: 4303954501457020696, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
+      propertyPath: HandSwordDialogueStage
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6857557849564756901, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
-      propertyPath: dialogue.sentences.Array.data[0].text
-      value: "O Golden Knight of the Golden Apple Kingdom, you are the chosen one,
-        \r\nI shall grant you the Super Strong Sword!\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857557849564756901, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
-      propertyPath: dialogue.sentences.Array.data[1].name
-      value: Wise Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857557849564756901, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
-      propertyPath: dialogue.sentences.Array.data[1].text
-      value: Wield it to protect yourself against evil forces.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857557849564756901, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
-      propertyPath: dialogue.sentences.Array.data[2].name
-      value: Wise Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857557849564756901, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
-      propertyPath: dialogue.sentences.Array.data[2].text
-      value: 'We shall meet again, o young Knight!
-
-'
+    - target: {fileID: 4303954501457020696, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
+      propertyPath: TakeSwordDialogueStage
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8403483243528780576, guid: 2f3071c86c6f39f42a84e803bf497f1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17433,7 +17406,6 @@ SceneRoots:
   - {fileID: 516973580}
   - {fileID: 185556789}
   - {fileID: 1406362873}
-  - {fileID: 1235098525}
   - {fileID: 7269258801541216657}
   - {fileID: 1331173800517477085}
   - {fileID: 7512266517016093561}
@@ -17444,3 +17416,4 @@ SceneRoots:
   - {fileID: 861840045}
   - {fileID: 1679464424}
   - {fileID: 111678374}
+  - {fileID: 1235098525}

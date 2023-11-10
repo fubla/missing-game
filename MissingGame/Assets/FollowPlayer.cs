@@ -21,8 +21,6 @@ public class FollowPlayer : MonoBehaviour
         {
             player = FindObjectOfType<GameManager>().GetCurrentPlayer();
             vCam.Follow = player.transform;
-            vCam.Follow = player.transform;
         }
-        
     }
 }

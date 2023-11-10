@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private GameObject currentPlayerObject;
 
     private GameObject oldPlayerObject;
+    private Transform oldPlayerTransform;
 
     private bool canAttack;
     
@@ -33,20 +34,20 @@ public class GameManager : MonoBehaviour
         switch (mode)
         {
             case 0:
-                oldPlayerObject = currentPlayerObject;
-                currentPlayerObject = Instantiate(playerFantasy, currentPlayerObject.transform);
-                Destroy(oldPlayerObject);
+                oldPlayerTransform = currentPlayerObject.transform;
+                Destroy(currentPlayerObject);
+                currentPlayerObject = Instantiate(playerFantasy, oldPlayerTransform.position, Quaternion.identity);
                 break;
             case 1:
-                oldPlayerObject = currentPlayerObject;
-                currentPlayerObject = Instantiate(playerFantasySword, currentPlayerObject.transform);
-                Destroy(oldPlayerObject);
+                oldPlayerTransform = currentPlayerObject.transform;
+                Destroy(currentPlayerObject);
+                currentPlayerObject = Instantiate(playerFantasySword, oldPlayerTransform.position, Quaternion.identity);
                 canAttack = true;
                 break;
             case 2:
-                oldPlayerObject = currentPlayerObject;
-                currentPlayerObject = Instantiate(playerReal, currentPlayerObject.transform);
-                Destroy(oldPlayerObject);
+                oldPlayerTransform = currentPlayerObject.transform;
+                Destroy(currentPlayerObject);
+                currentPlayerObject = Instantiate(playerReal, oldPlayerTransform.position, Quaternion.identity);
                 canAttack = true;
                 break;
         }

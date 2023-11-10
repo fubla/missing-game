@@ -51,7 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 150
   climbSpeed: 150
-  jumpAmount: 15
+  jumpAmount: 12
+  groundRadius: 0.15
   groundCheck: {fileID: 9055372605638342203}
   groundLayer:
     serializedVersion: 2

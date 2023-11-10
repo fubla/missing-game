@@ -15,6 +15,8 @@ public class DialogueTrigger : MonoBehaviour
     private bool isOpen;
 
     private bool isFinished;
+
+    private int dialogueStage;
    
     [SerializeField] private bool openOnEnter;
 
@@ -29,7 +31,8 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (isOpen)
             {
-                if (manager.DisplayNextSentence())
+                dialogueStage = manager.DisplayNextSentence();
+                if (dialogueStage == -1)
                 {
                     isOpen = false;
                     isFinished = true;
@@ -45,7 +48,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        manager.StartDialogue(dialogue);
+        dialogueStage = manager.StartDialogue(dialogue);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,8 +79,18 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    public bool DialogueIsOpen()
+    {
+        return isOpen;
+    }
+
+    public bool IsInRange()
+    {
+        return isInRange;
+    }
+
     public int GetDialogueStage()
     {
-        return manager.GetDialogueStage();
+        return dialogueStage;
     }
 }

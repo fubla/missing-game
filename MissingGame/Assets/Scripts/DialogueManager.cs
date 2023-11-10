@@ -17,34 +17,35 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<Sentence>();
+        dialogueStage = 0;
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public int StartDialogue(Dialogue dialogue)
     {
-        dialogueStage = 1;
         dialogueAnimator.SetBool("IsOpen", true);
+        dialogueStage = 0;
         sentences.Clear();
 
         foreach (Sentence sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-        DisplayNextSentence();
+        return DisplayNextSentence();
     }
 
-    public bool DisplayNextSentence()
+    public int DisplayNextSentence()
     {
         if (sentences.Count == 0)
         {
             EndDialogue();
-            return true;
+            return dialogueStage;
         }
 
         dialogueStage++;
         Sentence sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        return false;
+        return dialogueStage;
     }
 
     IEnumerator TypeSentence(Sentence sentence)
@@ -60,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        dialogueStage = -1;
         dialogueAnimator.SetBool("IsOpen", false);
     }
 
@@ -72,10 +74,4 @@ public class DialogueManager : MonoBehaviour
     {
         interactionBubbleAnimator.SetBool("PopupOpen", false);
     }
-
-    public int GetDialogueStage()
-    {
-        return dialogueStage;
-    }
-   
 }

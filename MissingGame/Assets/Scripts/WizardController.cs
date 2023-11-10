@@ -9,31 +9,34 @@ public class WizardController: MonoBehaviour
 {
     public int HandSwordDialogueStage;
     public int TakeSwordDialogueStage;
-    
-    public PlayerController playerController;
 
-    private DialogueManager manager;
+    private GameManager gameManager;
     private Animator animator;
+    private DialogueTrigger trigger;
 
 
     private void Start()
     {
-        manager = FindObjectOfType<DialogueManager>();
+        gameManager = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
+        trigger = GetComponent<DialogueTrigger>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        int stage = manager.GetDialogueStage();
-        if (stage == HandSwordDialogueStage)
+        if (trigger.IsInRange())
         {
-            animator.SetBool("IsGiving", true);
-            
-        }
-        else if(stage == TakeSwordDialogueStage)
-        {
-            
+            int stage = trigger.GetDialogueStage();
+            if (stage == HandSwordDialogueStage)
+            {
+                animator.SetBool("GivingItem", true);
+            }
+            else if(stage == TakeSwordDialogueStage)
+            {
+                gameManager.ActivatePlayerMode(1);
+                animator.SetBool("GivingItem", false);
+            }
         }
     }
 }

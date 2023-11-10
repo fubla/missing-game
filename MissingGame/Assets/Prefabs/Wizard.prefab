@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3595453000679146387}
   - component: {fileID: 1902607744439540614}
   - component: {fileID: 6857557849564756901}
+  - component: {fileID: 4303954501457020696}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Wizard
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 273012219
-  m_SortingLayer: 2
+  m_SortingLayerID: 726589447
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1827875775, guid: b90c6b1178c2ef441a0530b81bab8df1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.46454048, y: 0.075041175}
+  m_Offset: {x: -0.46454048, y: -0.031655192}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9014359, y: 1.3082509}
+  m_Size: {x: 1.9014359, y: 1.5216436}
   m_EdgeRadius: 0
 --- !u!114 &6857557849564756901
 MonoBehaviour:
@@ -167,10 +168,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - name: 
-      text: 
-    - name: 
-      text: 
-    - name: 
-      text: 
+    - name: Wise Wizard
+      text: "O Golden Knight of the Golden Apple Kingdom, you are the chosen one,
+        \r\nI shall grant you the Super Strong Sword!\r\n"
+    - name: Wise Wizard
+      text: Wield it to protect yourself against evil forces.
+    - name: Wise Wizard
+      text: 'We shall meet again, o young Knight!
+
+'
   openOnEnter: 0
+--- !u!114 &4303954501457020696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035930188427781745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cda924b7d7e2c043a5720009834a8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HandSwordDialogueStage: 1
+  TakeSwordDialogueStage: 2
