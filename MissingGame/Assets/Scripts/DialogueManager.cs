@@ -10,45 +10,49 @@ public class DialogueManager : MonoBehaviour
     public Animator interactionBubbleAnimator;
     public Text nameText;
     public Text dialogueText;
-    private Queue<String> sentences;
+    private Queue<Sentence> sentences;
+    private int dialogueStage;
     
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        sentences = new Queue<Sentence>();
+        dialogueStage = 0;
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public int StartDialogue(Dialogue dialogue)
     {
         dialogueAnimator.SetBool("IsOpen", true);
-        nameText.text = dialogue.name;
+        dialogueStage = 0;
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (Sentence sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-        DisplayNextSentence();
+        return DisplayNextSentence();
     }
 
-    public bool DisplayNextSentence()
+    public int DisplayNextSentence()
     {
         if (sentences.Count == 0)
         {
             EndDialogue();
-            return true;
+            return dialogueStage;
         }
 
-        string sentence = sentences.Dequeue();
+        dialogueStage++;
+        Sentence sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        return sentences.Count == 0;
+        return dialogueStage;
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(Sentence sentence)
     {
         dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
+        nameText.text = sentence.name;
+        foreach (char letter in sentence.text.ToCharArray())
         {
             dialogueText.text += letter;
             yield return null;
@@ -57,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        dialogueStage = -1;
         dialogueAnimator.SetBool("IsOpen", false);
     }
 
@@ -69,5 +74,4 @@ public class DialogueManager : MonoBehaviour
     {
         interactionBubbleAnimator.SetBool("PopupOpen", false);
     }
-   
 }

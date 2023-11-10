@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] 
     private float jumpAmount = 10f;
+
+    [SerializeField] private float groundRadius;
     
     private float horizontalInput;
     private float verticalInput;
@@ -28,9 +30,9 @@ public class PlayerController : MonoBehaviour
 
     private bool jumpPressed;
 
-    private bool canMove = true;
-    
     private bool canClimb;
+
+    private bool canAttack;
 
     private bool isClimbing;
 
@@ -48,12 +50,13 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         gravScale = rb.gravityScale;
+        canAttack = FindObjectOfType<GameManager>().CanPlayerCanAttack();
     }
 
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.02f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, groundRadius, groundLayer);
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         if (canClimb && Mathf.Abs(verticalInput) > 0f)
@@ -62,9 +65,18 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Climbing", true);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && canMove)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             jumpPressed = true;
+        }
+
+        if (Input.GetMouseButtonDown(0) && canAttack)
+        {
+            animator.SetTrigger("AttackingLeft");
+        }
+        if (Input.GetMouseButtonDown(1) && canAttack)
+        {
+            animator.SetTrigger("AttackingRight");
         }
     }
     
@@ -110,5 +122,21 @@ public class PlayerController : MonoBehaviour
             isClimbing = false;
             animator.SetBool("Climbing", false);
         }
+    }
+
+    public bool CanAttack()
+    {
+        return canAttack;
+    }
+
+    public void AttackRight()
+    {
+        Debug.Log("attacked");
+        animator.SetTrigger("AttackingRight");
+    }
+    
+    public void AttackLeft()
+    {
+        animator.SetTrigger("AttackingLeft");
     }
 }
