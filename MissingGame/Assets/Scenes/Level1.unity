@@ -2160,22 +2160,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound
       objectReference: {fileID: 0}
-    - target: {fileID: 7117964994272750294, guid: e5afed9f71b13994d986b894b33ad73c, type: 3}
-      propertyPath: EventReference.Guid.Data1
-      value: -1907836782
-      objectReference: {fileID: 0}
-    - target: {fileID: 7117964994272750294, guid: e5afed9f71b13994d986b894b33ad73c, type: 3}
-      propertyPath: EventReference.Guid.Data2
-      value: 1318686251
-      objectReference: {fileID: 0}
-    - target: {fileID: 7117964994272750294, guid: e5afed9f71b13994d986b894b33ad73c, type: 3}
-      propertyPath: EventReference.Guid.Data3
-      value: -975561287
-      objectReference: {fileID: 0}
-    - target: {fileID: 7117964994272750294, guid: e5afed9f71b13994d986b894b33ad73c, type: 3}
-      propertyPath: EventReference.Guid.Data4
-      value: 1281513403
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
