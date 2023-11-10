@@ -16,4 +16,9 @@ public class FMODSteps : MonoBehaviour
         instance.release();
         instance.clearHandle();
     }
+
+    public void PlaySwordSwing()
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SD/SwordSwing",gameObject);
+    }
 }
