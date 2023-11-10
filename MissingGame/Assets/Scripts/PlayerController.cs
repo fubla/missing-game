@@ -91,6 +91,10 @@ public class PlayerController : MonoBehaviour
             {
                 jumpPressed = false;
                 rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+                /*
+                if(jumpAmount > 6f)
+                    FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SD/Jump", gameObject);
+                    */
             }
 
             if (isClimbing)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
@@ -11,7 +12,7 @@ public class ItemPickup : MonoBehaviour
         bool wasPickedUp = Inventory.instance.Add(item);
         if (wasPickedUp)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/SD/Coins");
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PickUpCoin", 1f);
             Destroy(gameObject);
         }
     }
