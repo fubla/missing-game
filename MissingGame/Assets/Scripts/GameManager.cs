@@ -62,4 +62,9 @@ public class GameManager : MonoBehaviour
     {
         return currentPlayerObject;
     }
+
+    public bool HasApplePie()
+    {
+        return Inventory.instance.FindItemByName("Apple Pie") != null;
+    }
 }

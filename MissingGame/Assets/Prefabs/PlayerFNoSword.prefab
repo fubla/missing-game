@@ -69,12 +69,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1197314325, guid: a9810bb4e5879264ea57092dee68d3d2, type: 3}
     - target: {fileID: 7066541959111661593, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
+      propertyPath: climbSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066541959111661593, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
       propertyPath: jumpAmount
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7066541959111661593, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
       propertyPath: groundRadius
-      value: 0.15
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

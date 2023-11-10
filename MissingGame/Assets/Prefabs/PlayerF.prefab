@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
-  climbSpeed: 300
+  climbSpeed: 150
   jumpAmount: 12
   groundRadius: 0.3
   groundCheck: {fileID: 9055372605638342203}

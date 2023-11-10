@@ -7,6 +7,8 @@ public class StoreBehavior : MonoBehaviour
     public Animator shopScreenAnimator;
 
     private DialogueManager manager;
+    
+    private GameManager gameManager;
 
     private bool isInRange;
     
@@ -17,6 +19,7 @@ public class StoreBehavior : MonoBehaviour
     private void Start()
     {
         manager = FindObjectOfType<DialogueManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -50,7 +53,11 @@ public class StoreBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            manager.CloseInteractionBubble(); 
+            manager.CloseInteractionBubble();
+            if (gameManager.HasApplePie())
+            {
+                LevelChanger.instance.FadeToNextLevel();
+            }
         }
     }
 }
