@@ -11,6 +11,7 @@ public class ItemPickup : MonoBehaviour
         bool wasPickedUp = Inventory.instance.Add(item);
         if (wasPickedUp)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SD/Coins");
             Destroy(gameObject);
         }
     }

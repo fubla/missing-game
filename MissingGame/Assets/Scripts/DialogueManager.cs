@@ -68,6 +68,7 @@ public class DialogueManager : MonoBehaviour
     public void OpenInteractionBubble()
     {
         interactionBubbleAnimator.SetBool("PopupOpen", true);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SD/UI/DialogueHint");
     }
 
     public void CloseInteractionBubble()
