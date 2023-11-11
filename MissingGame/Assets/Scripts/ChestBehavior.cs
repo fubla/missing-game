@@ -31,6 +31,7 @@ public class ChestBehavior : MonoBehaviour
             {
                 isOpen = true;
                 animator.SetBool("IsOpen", true);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SD/WoodChestOpen", transform.position);
                 if (contents.Count > 0)
                 {
                     animator.SetBool("IsEmpty", false);
@@ -48,12 +49,14 @@ public class ChestBehavior : MonoBehaviour
                     {
                         Inventory.instance.Add(item);
                     }
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SD/WoodChestTake", transform.position);
                     contents.Clear();
                     animator.SetBool("IsOpen", true);
                     animator.SetBool("IsEmpty", true);
                 }
                 else
                 {
+                    
                     animator.SetBool("IsOpen", false);
                     animator.SetBool("IsEmpty", true);
                     interacted = true;

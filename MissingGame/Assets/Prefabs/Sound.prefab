@@ -91,6 +91,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 7117964994272750294}
+  caveSnapRef:
+    Guid:
+      Data1: 1548538839
+      Data2: 1152059308
+      Data3: 1841870526
+      Data4: -678371237
+    Path: snapshot:/InCave
 --- !u!1 &6056676870760996594
 GameObject:
   m_ObjectHideFlags: 0
