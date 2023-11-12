@@ -10,6 +10,8 @@ public class MusicManager : MonoBehaviour
 
     public GameObject player;
 
+    public float playerXpos;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -40,7 +42,7 @@ public class MusicManager : MonoBehaviour
     {
         if(!player)
             return;
-        
-        
+
+        playerXpos = player.transform.position.x;
     }
 }
