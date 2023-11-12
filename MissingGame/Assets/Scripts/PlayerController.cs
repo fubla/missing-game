@@ -96,7 +96,6 @@ public class PlayerController : MonoBehaviour
             if (isClimbing)
             {
                 verticalMovement = verticalInput * climbSpeed * Time.deltaTime;
-                animator.SetFloat("Vertical", verticalMovement);
                 rb.gravityScale = 0.0f;
                 rb.velocity = new Vector2(rb.velocity.x, verticalMovement);
             }

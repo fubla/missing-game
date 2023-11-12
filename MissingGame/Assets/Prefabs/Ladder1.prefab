@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 6040241437942379804}
   - component: {fileID: 5162447131650268627}
   m_Layer: 0
-  m_Name: LadderFantasy
+  m_Name: Ladder1
   m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
