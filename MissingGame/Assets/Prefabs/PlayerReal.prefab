@@ -57,8 +57,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 4f1c864c99e95488ba6eacc65bc421af, type: 2}
     - target: {fileID: 5239632423157218725, guid: a6b78fe7525e627408a067ceb8064cdd, type: 3}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239632423157218725, guid: a6b78fe7525e627408a067ceb8064cdd, type: 3}
+      propertyPath: canAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239632423157218725, guid: a6b78fe7525e627408a067ceb8064cdd, type: 3}
       propertyPath: jumpAmount
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154038488542621415, guid: a6b78fe7525e627408a067ceb8064cdd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.156
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154038488542621415, guid: a6b78fe7525e627408a067ceb8064cdd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.538
       objectReference: {fileID: 0}
     - target: {fileID: 8630116667599027323, guid: a6b78fe7525e627408a067ceb8064cdd, type: 3}
       propertyPath: m_Sprite

@@ -50,10 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16969ea377ef54175ad2bddfc1f5bbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 200
   climbSpeed: 150
   jumpAmount: 12
   groundRadius: 0.3
+  canAttack: 1
   groundCheck: {fileID: 9055372605638342203}
   groundLayer:
     serializedVersion: 2
