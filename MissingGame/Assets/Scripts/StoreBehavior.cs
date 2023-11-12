@@ -27,9 +27,13 @@ public class StoreBehavior : MonoBehaviour
 
     private void Update()
     {
-        if(isInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerController == null)
         {
             playerController = gameManager.GetCurrentPlayer().GetComponent<PlayerController>();
+        }
+        
+        if(isInRange && Input.GetKeyDown(KeyCode.E))
+        {
             if (!isOpen)
             {
                 isOpen = true;

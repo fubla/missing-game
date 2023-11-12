@@ -4,6 +4,7 @@ public class MoleBehavior : MonoBehaviour
 {
     public int FightStage;
     public BoxCollider2D blockingCollider;
+    public BoxCollider2D thisCollider;
     private GameManager gameManager;
     private Animator animator;
     private DialogueTrigger trigger;
