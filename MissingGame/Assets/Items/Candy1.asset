@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dec82610b8a0d5478ce6d0cf2a1c339, type: 3}
-  m_Name: FreshPie
+  m_Name: Candy1
   m_EditorClassIdentifier: 
-  name: Apple Pie
-  icon: {fileID: 762924974, guid: 8d18e047f9bb7bf4ab951142306e59d6, type: 3}
-  price: 2
+  name: Wrapped Candy
+  icon: {fileID: 2018349744, guid: 0a591574274cdf9489b23f5a4d93f490, type: 3}
+  price: 1
