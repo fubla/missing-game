@@ -12,6 +12,10 @@ public class MusicManager : MonoBehaviour
 
     public float playerXpos;
 
+    public FMODUnity.StudioEventEmitter soundEmitter;
+
+    private bool _horizontalControl;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -30,6 +34,23 @@ public class MusicManager : MonoBehaviour
     {
         player = null;
         StartCoroutine(WaitABitToAssignPlayer());
+
+        if (scene.name == "Level2")
+        {
+            soundEmitter.SetParameter("HorizontalControl", 1);
+            _horizontalControl = true;
+        }
+
+        if (scene.name == "LevelHome")
+        {
+            _horizontalControl = false;
+            soundEmitter.SetParameter("InHome", 1);
+        }
+
+        if (scene.name == "EndScreen")
+        {
+            soundEmitter.SetParameter("MusicEnd", 1);
+        }
     }
 
     private IEnumerator WaitABitToAssignPlayer()
@@ -40,9 +61,11 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        if(!player)
+        if(!player !& _horizontalControl)
             return;
-
+        
         playerXpos = player.transform.position.x;
+        
+        soundEmitter.SetParameter("PlayerPos", playerXpos);
     }
 }
