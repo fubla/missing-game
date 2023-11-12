@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -32,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canClimb;
 
-    private bool canAttack;
+    public bool canAttack;
 
     private bool isClimbing;
 
@@ -50,7 +47,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         gravScale = rb.gravityScale;
-        canAttack = FindObjectOfType<GameManager>().CanPlayerCanAttack();
     }
 
     // Update is called once per frame
@@ -129,9 +125,13 @@ public class PlayerController : MonoBehaviour
         return canAttack;
     }
 
+    public void SetCanAttack(bool can)
+    {
+        canAttack = can;
+    }
+
     public void AttackRight()
     {
-        Debug.Log("attacked");
         animator.SetTrigger("AttackingRight");
     }
     

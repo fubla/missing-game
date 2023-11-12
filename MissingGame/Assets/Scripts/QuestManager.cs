@@ -1,19 +1,22 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestManager : MonoBehaviour
+public class QuestManager : DialogueManager
 {
-    public Animator questScrollAnimator;
+    #region Singleton
 
-    public void OpenQuest()
+    public new static QuestManager instance;
+
+    private void Awake()
     {
-        questScrollAnimator.SetBool("IsOpen", true);
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of DialogueManager found!");
+            return;
+        }
+        instance = this;
     }
 
-    public void CloseQuest()
-    {
-        questScrollAnimator.SetBool("IsOpen", false);
-    }
+    #endregion
     
 }

@@ -1,23 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoleBehavior : MonoBehaviour
 {
-    
     public int FightStage;
-
+    public BoxCollider2D blockingCollider;
     private GameManager gameManager;
     private Animator animator;
     private DialogueTrigger trigger;
+    private PlayerController playerController;
 
     private bool hasStruck;
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = GameManager.instance;
         animator = GetComponent<Animator>();
         trigger = GetComponent<DialogueTrigger>();
+        trigger.enabled = false;
     }
     
     // Update is called once per frame
@@ -25,7 +24,14 @@ public class MoleBehavior : MonoBehaviour
     {
         if (trigger.IsInRange())
         {
-            PlayerController playerController = gameManager.GetCurrentPlayer().GetComponent<PlayerController>();
+            if (playerController == null)
+            {
+                playerController = gameManager.GetCurrentPlayer().GetComponent<PlayerController>();
+            }
+            if (playerController.CanAttack())
+            {
+                trigger.enabled = true;
+            }
             int stage = trigger.GetDialogueStage();
             if (stage == FightStage)
             {
@@ -34,6 +40,7 @@ public class MoleBehavior : MonoBehaviour
                     playerController.AttackRight();
                     hasStruck = true;
                     animator.SetBool("IsDead", true);
+                    blockingCollider.enabled = false;
                 }
             }
         }

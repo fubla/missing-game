@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Singleton
+
+    public static GameManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of GameManager found!");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+    
     public GameObject playerFantasy;
     public GameObject playerFantasySword;
     public GameObject playerReal;
@@ -20,12 +35,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentPlayerObject = Instantiate(startPlayerObject, playerStart.position, Quaternion.identity);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     
     // mode: 0 - Fantasy, 1 - Fantasy with sword, 2 - Real

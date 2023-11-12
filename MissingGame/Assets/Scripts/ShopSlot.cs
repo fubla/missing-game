@@ -1,9 +1,15 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 
 public class ShopSlot : MonoBehaviour
 {
     public Image icon;
+
+    public Text notEnoughText;
     //public Button removeButton;
     
     private Item item;
@@ -27,16 +33,26 @@ public class ShopSlot : MonoBehaviour
 
     public void BuyItem()
     {
-        Item foundCoin = Inventory.instance.FindItemByName("Coin");
-        if (foundCoin)
+        List<Item> foundCoins = Inventory.instance.FindAllByName("Coin");
+        if (foundCoins.Count >= item.price)
         {
-            Inventory.instance.Remove(foundCoin);
+            for (int i = 0; i < item.price; i++)
+            {
+                Inventory.instance.Remove(foundCoins[i]);
+            }
             Inventory.instance.Add(item);
             StoreInventory.instance.Remove(item);
         }
         else
         {
-            Debug.Log("Not enough gold!");
+            StartCoroutine(SetTextForTime(1.0f));
         }
     }
+
+    private IEnumerator SetTextForTime(float waitTime)
+    {
+        notEnoughText.enabled = true;
+        yield return new WaitForSeconds(waitTime);
+        notEnoughText.enabled = false;
+    } 
 }

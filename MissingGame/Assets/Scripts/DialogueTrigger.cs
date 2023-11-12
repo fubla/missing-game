@@ -1,84 +1,117 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    public List<Dialogue> dialogues;
 
-    private DialogueManager manager;
+    protected DialogueManager manager;
 
-    private bool isInRange;
+    protected bool isInRange;
 
-    private bool isOpen;
+    protected bool isOpen;
 
-    private bool isFinished;
+    protected bool isFinished;
 
-    private int dialogueStage;
+    protected int dialogueStage;
+    
+    protected int dialogueIndex;
+
+    protected bool isConversationFinished;
 
     private bool canContinue = true;
-   
-    [SerializeField] private bool openOnEnter;
 
-    void Start()
+    private bool wasInterrupted;
+
+    private int prevStage;
+   
+    public bool openOnEnter;
+
+    protected virtual void Start()
     {
-        manager = FindObjectOfType<DialogueManager>();
+        manager = DialogueManager.instance;
+        dialogueIndex = 0;
+        prevStage = 0;
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        if (isInRange && Input.GetKeyDown(KeyCode.E) && canContinue)
+        if (!isInRange || !Input.GetKeyDown(KeyCode.E))
         {
-            if (isOpen)
+            return;
+        }
+        
+        if (isOpen)
+        {
+            dialogueStage = manager.DisplayNextSentence();
+            if (dialogueStage != -1)
             {
-                dialogueStage = manager.DisplayNextSentence();
-                if (dialogueStage == -1)
-                {
-                    isOpen = false;
-                    isFinished = true;
-                }
+                return;
             }
-            else if (!isFinished)
+            isOpen = false;
+            isFinished = true;
+            prevStage = dialogueStage;
+            
+            if (dialogueIndex == dialogues.Count - 1)
             {
-                TriggerDialogue();
-                isOpen = true;
+                isConversationFinished = true;
+                prevStage = 0;
             }
+        }
+        else if (isFinished)
+        {
+            if (dialogueIndex + 1 < dialogues.Count)
+            {
+                TriggerDialogue(++dialogueIndex);
+            }
+        }
+        else
+        {
+            TriggerDialogue(dialogueIndex);
         }
     }
 
-    public void TriggerDialogue()
+    public void TriggerDialogue(int index)
     {
-        dialogueStage = manager.StartDialogue(dialogue);
+        if (dialogueIndex >= dialogues.Count)
+        {
+            return;
+        }
+        
+        dialogueStage = manager.StartDialogue(dialogues[index]) + prevStage;
+        
+        isOpen = true;
+        isFinished = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && !isFinished)
+        if (!other.gameObject.CompareTag("Player") || isConversationFinished)
         {
-            isInRange = true;
-            if (openOnEnter)
-            {
-                TriggerDialogue();
-                isOpen = true;
-            }
-            else
-            {
-                manager.OpenInteractionBubble();    
-            }
+            return;
+        }
+        isInRange = true;
+        if (openOnEnter)
+        {
+            TriggerDialogue(dialogueIndex);
+        }
+        else
+        {
+            manager.OpenInteractionBubble();    
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (!other.gameObject.CompareTag("Player"))
         {
-            isInRange = false;
-            manager.EndDialogue();
-            isOpen = false;
-            manager.CloseInteractionBubble();
+            return;
         }
+        
+        isInRange = false;
+        manager.EndDialogue(isConversationFinished);
+        isOpen = false;
+        manager.CloseInteractionBubble();
     }
 
     public bool IsInRange()
@@ -89,5 +122,15 @@ public class DialogueTrigger : MonoBehaviour
     public int GetDialogueStage()
     {
         return dialogueStage;
+    }
+
+    public void SetCanContinue(bool can)
+    {
+        canContinue = can;
+    }
+
+    public bool GetFinished()
+    {
+        return isFinished;
     }
 }

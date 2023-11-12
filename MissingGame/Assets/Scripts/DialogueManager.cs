@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +5,22 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Singleton
+
+    public static DialogueManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of DialogueManager found!");
+            return;
+        }
+        instance = this;
+    }
+
+    #endregion
+    
     public Animator dialogueAnimator;
     public Animator interactionBubbleAnimator;
     public Text nameText;
@@ -13,8 +28,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<Sentence> sentences;
     private int dialogueStage;
     
-    // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         sentences = new Queue<Sentence>();
         dialogueStage = 0;
@@ -37,7 +51,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            EndDialogue(true);
             return dialogueStage;
         }
 
@@ -48,20 +62,23 @@ public class DialogueManager : MonoBehaviour
         return dialogueStage;
     }
 
-    IEnumerator TypeSentence(Sentence sentence)
+    protected IEnumerator TypeSentence(Sentence sentence)
     {
         dialogueText.text = "";
         nameText.text = sentence.name;
-        foreach (char letter in sentence.text.ToCharArray())
+        foreach (char letter in sentence.text)
         {
             dialogueText.text += letter;
             yield return null;
         }
     }
 
-    public void EndDialogue()
+    public void EndDialogue(bool wasFinished)
     {
-        dialogueStage = -1;
+        if (wasFinished)
+        {
+            dialogueStage = -1;
+        }
         dialogueAnimator.SetBool("IsOpen", false);
     }
 

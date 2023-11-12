@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +8,8 @@ public class ChestBehavior : MonoBehaviour
     private Animator animator;
 
     private DialogueManager manager;
+
+    private Inventory inventory;
     
     private bool isInRange;
     
@@ -20,7 +20,8 @@ public class ChestBehavior : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        manager = FindObjectOfType<DialogueManager>();
+        manager = DialogueManager.instance;
+        inventory = Inventory.instance;
     }
 
     private void Update()
@@ -46,7 +47,7 @@ public class ChestBehavior : MonoBehaviour
                 {
                     foreach (Item item in contents)
                     {
-                        Inventory.instance.Add(item);
+                        inventory.Add(item);
                     }
                     contents.Clear();
                     animator.SetBool("IsOpen", true);

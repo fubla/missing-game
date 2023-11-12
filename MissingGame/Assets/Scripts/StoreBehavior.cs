@@ -14,34 +14,40 @@ public class StoreBehavior : MonoBehaviour
     
     private bool isOpen;
 
-    private bool interacted;
+    private PlayerController playerController;
+
+
+    public bool isStoreClosed;
 
     private void Start()
     {
-        manager = FindObjectOfType<DialogueManager>();
-        gameManager = FindObjectOfType<GameManager>();
+        manager = DialogueManager.instance;
+        gameManager = GameManager.instance;
     }
 
     private void Update()
     {
         if(isInRange && Input.GetKeyDown(KeyCode.E))
         {
+            playerController = gameManager.GetCurrentPlayer().GetComponent<PlayerController>();
             if (!isOpen)
             {
                 isOpen = true;
                 shopScreenAnimator.SetBool("IsOpen", true);
+                playerController.SetCanAttack(false);
             }
             else
             {
                 isOpen = false;
                 shopScreenAnimator.SetBool("IsOpen", false);
+                playerController.SetCanAttack(true);
             }
         }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && !interacted)
+        if (other.gameObject.CompareTag("Player") && !isStoreClosed)
         {
             isInRange = true;
             manager.OpenInteractionBubble(); 
@@ -50,9 +56,10 @@ public class StoreBehavior : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isStoreClosed)
         {
             isInRange = false;
+            playerController.SetCanAttack(true);
             manager.CloseInteractionBubble();
             if (gameManager.HasApplePie())
             {

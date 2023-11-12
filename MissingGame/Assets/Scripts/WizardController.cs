@@ -18,7 +18,7 @@ public class WizardController: MonoBehaviour
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = GameManager.instance;
         animator = GetComponent<Animator>();
         trigger = GetComponent<DialogueTrigger>();
         soundDrawPlayed = false;

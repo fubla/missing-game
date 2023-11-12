@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class CatBehavior : MonoBehaviour
+public class PostboxBehavior : MonoBehaviour
 {
     
-    public int OpenEyesStage;
-    public int CloseEyesStage;
+    public int TurnHeadStage;
+    public int TurnHeadBackStage;
 
     private Animator animator;
     private DialogueTrigger trigger;
@@ -21,11 +21,11 @@ public class CatBehavior : MonoBehaviour
         if (trigger.IsInRange())
         {
             int stage = trigger.GetDialogueStage();
-            if (stage == OpenEyesStage)
+            if (stage == TurnHeadStage)
             {
                 animator.SetBool("Looking", true);
             }
-            else if(stage == CloseEyesStage)
+            else if(stage == TurnHeadBackStage)
             {
                 animator.SetBool("Looking", false);
             }

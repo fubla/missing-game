@@ -56,4 +56,11 @@ public class Inventory : MonoBehaviour
    {
       return items.Find(item => item.name == name);
    }
+   
+   public List<Item> FindAllByName(string name)
+   {
+      return items.FindAll(item => item.name == name);
+   }
+   
+   
 }
