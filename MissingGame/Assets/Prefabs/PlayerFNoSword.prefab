@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1794725017829815305, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
+      propertyPath: m_Mass
+      value: 0.8892281
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121662078833070426, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9292393
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121662078833070426, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.01461969
+      objectReference: {fileID: 0}
     - target: {fileID: 3119762860359665779, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
       propertyPath: m_Name
       value: PlayerFNoSword
@@ -91,32 +103,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3119762860359665779, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3983376090105660102}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
---- !u!1 &138503692975877583 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3119762860359665779, guid: 2c05d34a694b442a7a8b561b0382cf71, type: 3}
-  m_PrefabInstance: {fileID: 3073583141501920700}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3983376090105660102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138503692975877583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef9d7b6ed521674c862f5884145a5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepRef:
-    Guid:
-      Data1: -1572536803
-      Data2: 1257890108
-      Data3: 1010847621
-      Data4: 721467665
-    Path: event:/SD/Steps

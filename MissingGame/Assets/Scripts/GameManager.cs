@@ -74,6 +74,6 @@ public class GameManager : MonoBehaviour
 
     public bool HasApplePie()
     {
-        return Inventory.instance.FindItemByName("Apple Pie") != null;
+        return Inventory.instance.FindItemByName("Fresh Apple Pie") != null;
     }
 }

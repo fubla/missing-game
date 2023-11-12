@@ -7,6 +7,7 @@ public class BeastTamer : MonoBehaviour
     private DialogueTrigger trigger;
     private PlayerController playerController;
 
+    private bool hasGiven;
 
     private void Start()
     {
@@ -19,9 +20,10 @@ public class BeastTamer : MonoBehaviour
         if (trigger.IsInRange())
         {
             int stage = trigger.GetDialogueStage();
-            if (stage == GiveStage)
+            if (stage == GiveStage && !hasGiven)
             {
                 Inventory.instance.Add(givenItem);
+                hasGiven = true;
             }
         }
     }

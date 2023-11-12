@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dec82610b8a0d5478ce6d0cf2a1c339, type: 3}
   m_Name: FreshPie1
   m_EditorClassIdentifier: 
-  name: Apple Pie
+  id: ff90d7e4971d6ca4db8f25355aca593e
+  name: Fresh Apple Pie
   icon: {fileID: 762924974, guid: 8d18e047f9bb7bf4ab951142306e59d6, type: 3}
   price: 2

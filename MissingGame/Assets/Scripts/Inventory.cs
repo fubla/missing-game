@@ -1,10 +1,12 @@
+using System;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
    #region Singleton
-
    public static Inventory instance;
 
    private void Awake()
@@ -12,9 +14,13 @@ public class Inventory : MonoBehaviour
       if (instance != null)
       {
          Debug.LogWarning("More than one instance of Inventory found!");
-         return;
+         Destroy(gameObject);
       }
-      instance = this;
+      else
+      {
+         instance = this;
+         DontDestroyOnLoad(gameObject);         
+      }
    }
 
    #endregion
@@ -61,6 +67,4 @@ public class Inventory : MonoBehaviour
    {
       return items.FindAll(item => item.name == name);
    }
-   
-   
 }
