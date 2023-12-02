@@ -25,7 +25,11 @@ PluginImporter:
   - first:
       WebGL: WebGL
     second:
+<<<<<<< HEAD
       enabled: 1
+=======
+      enabled: 0
+>>>>>>> @{-1}
       settings: {}
   userData: 
   assetBundleName: 
