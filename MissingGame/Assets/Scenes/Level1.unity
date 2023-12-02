@@ -2734,6 +2734,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 807436513}
     m_Modifications:
     - target: {fileID: 5921013950296957931, guid: 8f778916324a2b5429ffa737b7cc13ab, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1485503116, guid: 1632c71020fbcc640b35810b55e62465, type: 3}
+    - target: {fileID: 5921013950296957931, guid: 8f778916324a2b5429ffa737b7cc13ab, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -5197,9 +5201,9 @@ MonoBehaviour:
   dialogues:
   - sentences:
     - name: Signpost
-      text: 'Left - Home
+      text: 'Left - Your Castle
 
-        Right - Store'
+        Right - Market'
   openOnEnter: 0
 --- !u!212 &1433953518
 SpriteRenderer:
@@ -20260,6 +20264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2068329511836261299, guid: bb012e38036a7904d85324f316920187, type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0].text
+      value: To the market
+      objectReference: {fileID: 0}
     - target: {fileID: 3545511670708373485, guid: bb012e38036a7904d85324f316920187, type: 3}
       propertyPath: m_Name
       value: GJ_Grass_310x280_0

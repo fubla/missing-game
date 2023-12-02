@@ -332,6 +332,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
   - {fileID: 11400000, guid: 8136ed0fae3d0694caf88d7b16fa725b, type: 2}
+--- !u!114 &27493582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27493576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97870a0eb650439badea845794487b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues:
+  - sentences:
+    - name: 
+      text: The chest does not open.
+  openOnEnter: 0
 --- !u!1 &75874222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,6 +2769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807436513}
     m_Modifications:
+    - target: {fileID: 5921013950296957931, guid: 8f778916324a2b5429ffa737b7cc13ab, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 638200016, guid: 1632c71020fbcc640b35810b55e62465, type: 3}
     - target: {fileID: 5921013950296957931, guid: 8f778916324a2b5429ffa737b7cc13ab, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5274,9 +5295,9 @@ MonoBehaviour:
   dialogues:
   - sentences:
     - name: Signpost
-      text: 'Left - Home
+      text: 'Left - Your Castle
 
-        Right - Store'
+        Right - Market'
   openOnEnter: 0
 --- !u!212 &1433953518
 SpriteRenderer:
@@ -5763,7 +5784,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915791955500896152, guid: 3ab4f40a43f4ca04aa4d577b9c34b191, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915791955500896152, guid: 3ab4f40a43f4ca04aa4d577b9c34b191, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].name
+      value: Scroll
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915791955500896152, guid: 3ab4f40a43f4ca04aa4d577b9c34b191, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].text
+      value: 'Wait for grandma with the apple pie.
+
+        Throw the apple pie away
+        if it gets cold.'
       objectReference: {fileID: 0}
     - target: {fileID: 7920634771650932639, guid: 3ab4f40a43f4ca04aa4d577b9c34b191, type: 3}
       propertyPath: m_Sprite
@@ -5771,7 +5803,7 @@ PrefabInstance:
       objectReference: {fileID: -888270681, guid: 0556afae1f92f6448b96f3b69fd8e4e8, type: 3}
     - target: {fileID: 8025688837569302845, guid: 3ab4f40a43f4ca04aa4d577b9c34b191, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19967,7 +19999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3504916623625157522, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504916623625157522, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
       propertyPath: m_Offset.x
@@ -19976,6 +20008,14 @@ PrefabInstance:
     - target: {fileID: 3504916623625157522, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
       propertyPath: m_Offset.y
       value: -0.049174488
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504916623625157522, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504916623625157522, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.84375
       objectReference: {fileID: 0}
     - target: {fileID: 4299991380799219313, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
       propertyPath: m_Sprite
@@ -20040,6 +20080,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6929727450709356307, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 27493581}
+    - targetCorrespondingSourceObject: {fileID: 6929727450709356307, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 27493582}
   m_SourcePrefab: {fileID: 100100000, guid: 57e0efb4629702640b06642994f87ffb, type: 3}
 --- !u!1001 &4500742329930134622
 PrefabInstance:
@@ -20433,6 +20476,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2068329511836261299, guid: bb012e38036a7904d85324f316920187, type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0].text
+      value: To the market
+      objectReference: {fileID: 0}
     - target: {fileID: 3545511670708373485, guid: bb012e38036a7904d85324f316920187, type: 3}
       propertyPath: m_Name
       value: GJ_Grass_310x280_0
