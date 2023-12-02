@@ -34,6 +34,7 @@ public class ShopSlot : MonoBehaviour
     public void BuyItem()
     {
         List<Item> foundCoins = Inventory.instance.FindAllByName("Coin");
+        List<Item> foundBottles = Inventory.instance.FindAllByName("Recyclable Bottle");
         if (foundCoins.Count >= item.price)
         {
             for (int i = 0; i < item.price; i++)
@@ -43,7 +44,16 @@ public class ShopSlot : MonoBehaviour
             Inventory.instance.Add(item);
             StoreInventory.instance.Remove(item);
         }
-        else
+        else if (foundBottles.Count >= item.price)
+        {
+            for (int i = 0; i < item.price; i++)
+            {
+                Inventory.instance.Remove(foundBottles[i]);
+            }
+            Inventory.instance.Add(item);
+            StoreInventory.instance.Remove(item);
+        }
+        else 
         {
             StartCoroutine(SetTextForTime(1.0f));
         }

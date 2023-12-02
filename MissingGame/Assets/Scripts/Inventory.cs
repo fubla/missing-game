@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -19,7 +16,6 @@ public class Inventory : MonoBehaviour
       else
       {
          instance = this;
-         DontDestroyOnLoad(gameObject);         
       }
    }
 

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Lollipop
   icon: {fileID: -1783695636, guid: 8d18e047f9bb7bf4ab951142306e59d6, type: 3}
-  price: 1
+  price: 10
