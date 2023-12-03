@@ -8,32 +8,40 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        InitFMOD();
+        StartCoroutine(InitFMODAsync());
     }
 
-    private void LoadFirstScene()
-    {
-        SceneManager.LoadScene(1);
-    }
-    
     [BankRef] [SerializeField] private string masterBankRef;
+    [BankRef] [SerializeField] private string masterStrBankRef;
     [SerializeField] private GameObject loadText;
-    
-    public void InitFMOD()
-    {
-        RuntimeManager.LoadBank(masterBankRef, false);
-        StartCoroutine(WaitForFMODLoading());
-    }
 
-    private IEnumerator WaitForFMODLoading()
+    private IEnumerator InitFMODAsync()
     {
+        AsyncOperation async = SceneManager.LoadSceneAsync(1);
+        async.allowSceneActivation = false;
+        
+        RuntimeManager.LoadBank(masterBankRef, true);
+        RuntimeManager.LoadBank(masterStrBankRef, true);
+        
         loadText.SetActive(true);
         while (!RuntimeManager.HaveAllBanksLoaded)
         {
             yield return null;
         }
-        loadText.SetActive(false);
+
+        while (RuntimeManager.AnySampleDataLoading())
+        {
+            yield return null;
+        }
         
-        LoadFirstScene();
+        loadText.SetActive(false);
+
+        async.allowSceneActivation = true;
+
+        while (!async.isDone)
+        {
+            yield return null;
+        }
+
     }
 }

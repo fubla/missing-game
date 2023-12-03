@@ -213,6 +213,13 @@ MonoBehaviour:
       Data3: 1010847621
       Data4: 721467665
     Path: event:/SD/Steps
+  swordSwingRef:
+    Guid:
+      Data1: 1744415576
+      Data2: 1325485471
+      Data3: -2052123765
+      Data4: 1268390744
+    Path: event:/SD/SwordSwing
 --- !u!1 &9055372605638342203
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FMODSteps : MonoBehaviour
 {
     [SerializeField] private FMODUnity.EventReference stepRef;
-
+    [FormerlySerializedAs("dialogHintRef")] [SerializeField] private FMODUnity.EventReference swordSwingRef;
     public void PlayStep()
     {
         var instance = FMODUnity.RuntimeManager.CreateInstance(stepRef);
@@ -19,6 +20,6 @@ public class FMODSteps : MonoBehaviour
 
     public void PlaySwordSwing()
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SD/SwordSwing",gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(swordSwingRef,gameObject);
     }
 }

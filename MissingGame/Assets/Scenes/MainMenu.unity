@@ -866,6 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterBankRef: Master
+  masterStrBankRef: Master.strings
   loadText: {fileID: 726893631}
 --- !u!1 &2053485283
 GameObject:
