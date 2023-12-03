@@ -61,7 +61,7 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        if(!player && !_horizontalControl)
+        if(!player || !_horizontalControl)
             return;
         
         playerXpos = player.transform.position.x;
