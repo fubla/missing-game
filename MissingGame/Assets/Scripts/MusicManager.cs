@@ -12,6 +12,9 @@ public class MusicManager : MonoBehaviour
 
     public float playerXpos;
 
+    private float musicInfluence;
+    private string _currentScene;
+
     public FMODUnity.StudioEventEmitter soundEmitter;
 
     private bool _horizontalControl;
@@ -34,23 +37,34 @@ public class MusicManager : MonoBehaviour
     {
         player = null;
         StartCoroutine(WaitABitToAssignPlayer());
+        _currentScene = scene.name;
 
-        if (scene.name == "Level2")
+        switch (_currentScene)
         {
-            soundEmitter.SetParameter("HorizontalControl", 1);
-            _horizontalControl = true;
-        }
+            case "Level2":
+                soundEmitter.SetParameter("HorizontalControl", 1);
+                _horizontalControl = true;
+                musicInfluence = 50f;
+                break;
+            case "Level3":
+                _horizontalControl = false;
+                soundEmitter.SetParameter("HorizontalControl", 0);
+                break;
+            case "Level4":
+                _horizontalControl = true;
+                soundEmitter.SetParameter("HorizontalControl", 1);
+                musicInfluence = 0;
+                break;
+            case "LevelHome":
+                _horizontalControl = false;
+                soundEmitter.SetParameter("InHome", 1);
+                break;
+            case "EndScreen":
+                soundEmitter.SetParameter("MusicEnd", 1);
+                break;
 
-        if (scene.name == "LevelHome")
-        {
-            _horizontalControl = false;
-            soundEmitter.SetParameter("InHome", 1);
         }
-
-        if (scene.name == "EndScreen")
-        {
-            soundEmitter.SetParameter("MusicEnd", 1);
-        }
+        
     }
 
     private IEnumerator WaitABitToAssignPlayer()
@@ -66,6 +80,6 @@ public class MusicManager : MonoBehaviour
         
         playerXpos = player.transform.position.x;
         
-        soundEmitter.SetParameter("PlayerPos", playerXpos);
+        soundEmitter.SetParameter("PlayerPos", playerXpos + musicInfluence);
     }
 }
