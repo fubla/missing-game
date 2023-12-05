@@ -22,6 +22,9 @@ public class MainMenu : MonoBehaviour
         
         RuntimeManager.LoadBank(masterBankRef, true);
         RuntimeManager.LoadBank(masterStrBankRef, true);
+
+        RuntimeManager.CoreSystem.mixerSuspend();
+        RuntimeManager.CoreSystem.mixerResume();
         
         loadText.SetActive(true);
         while (!RuntimeManager.HaveAllBanksLoaded)
