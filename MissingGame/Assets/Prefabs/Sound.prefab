@@ -153,7 +153,7 @@ MonoBehaviour:
       Data4: 1281513403
     Path: event:/Music
   Event: 
-  PlayEvent: 1
+  PlayEvent: 0
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1e23f53cb4b04d84e7f2f938d48df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicEmitter: {fileID: 7117964994272750294}
   player: {fileID: 0}
   playerXpos: 0
   soundEmitter: {fileID: 7117964994272750294}
