@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
+    public FMODUnity.StudioEventEmitter musicEmitter;
     public static MusicManager Instance { get; private set; }
 
     public GameObject player;
@@ -41,6 +42,9 @@ public class MusicManager : MonoBehaviour
 
         switch (_currentScene)
         {
+            case "Level1":
+                musicEmitter.Play();
+                break;
             case "Level2":
                 soundEmitter.SetParameter("HorizontalControl", 1);
                 _horizontalControl = true;
