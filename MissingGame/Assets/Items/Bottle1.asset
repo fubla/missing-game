@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bottle1
   m_EditorClassIdentifier: 
   name: Recyclable Bottle
-  icon: {fileID: -1058021275, guid: bf0e73725008947409eb7c7d292ca92f, type: 3}
+  icon: {fileID: 21300000, guid: ca9d01c9ea09fbc4d92dfa81c501ec3e, type: 3}
   price: 0
